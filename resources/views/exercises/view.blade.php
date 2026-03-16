@@ -210,7 +210,6 @@
                 </div>
             @endif
 
-            <!-- Visibility Status -->
             <div class="bg-white rounded-lg shadow-md p-6 mt-6">
                 <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">Status</h3>
                 <div class="flex items-center">
@@ -234,7 +233,6 @@
 @push('scripts')
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Save button functionality
     const saveButtons = document.querySelectorAll('.save-btn');
     
     saveButtons.forEach(button => {
@@ -244,8 +242,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const saveIcon = this.querySelector('.save-icon');
             const saveText = this.querySelector('.save-text');
             const originalContent = this.innerHTML;
-            
-            // Show loading state
+    
             this.disabled = true;
             this.classList.add('opacity-50', 'cursor-not-allowed');
             
