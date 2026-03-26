@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CompetitionController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExerciseController;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +35,16 @@ Route::middleware('auth')->group(function () {
     
     Route::post('/exercises/{id}/comments', [ExerciseController::class, 'addComment'])->name('exercises.comments.store');
     Route::delete('/exercises/{id}/comments', [ExerciseController::class, 'deleteComment'])->name('exercises.comments.delete');
+    
+    Route::get('/competitions', [CompetitionController::class, 'index'])->name('competitions.index');
+    Route::get('/competitions/create', [CompetitionController::class, 'create'])->name('competitions.create');
+    Route::post('/competitions', [CompetitionController::class, 'store'])->name('competitions.store');
+    Route::get('/competitions/view/{id}', [CompetitionController::class, 'view'])->name('competitions.view');
+    Route::get('/competitions/edit/{id}', [CompetitionController::class, 'edit'])->name('competitions.edit');
+    Route::put('/competitions/{id}', [CompetitionController::class, 'update'])->name('competitions.update');
+    Route::delete('/competitions/{id}', [CompetitionController::class, 'destroy'])->name('competitions.destroy');
+    Route::post('/competitions/{id}/approve', [CompetitionController::class, 'approve'])->name('competitions.approve');
+    Route::post('/competitions/{id}/unapprove', [CompetitionController::class, 'unapprove'])->name('competitions.unapprove');
 });
 
 Route::middleware(['auth'])->group(function () {

@@ -3,7 +3,7 @@
 @section('title', 'Public Exercises')
 
 @section('content')
-<div class="container mx-auto px-4 py-8">
+<div class="container mx-auto px-2 sm:px-4 py-4 sm:py-8">
     <div class="flex items-center justify-between mb-6">
         <div>
             <h1 class="text-3xl font-bold text-gray-800">Public Exercises</h1>
@@ -96,7 +96,6 @@
 @push('scripts')
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Save button functionality
     const saveButtons = document.querySelectorAll('.save-btn');
     
     saveButtons.forEach(button => {
@@ -105,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const isCurrentlySaved = this.dataset.saved === 'true';
             const saveIcon = this.querySelector('.save-icon');
             
-            // Show loading state
+
             this.disabled = true;
             
             try {
@@ -123,7 +122,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 const data = await response.json();
                 
                 if (data.success) {
-                    // Update button state
                     this.dataset.saved = data.isSaved ? 'true' : 'false';
                     
                     if (data.isSaved) {
@@ -132,7 +130,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         saveIcon.classList.add('fill-current');
                         saveIcon.classList.remove('fill-none');
                         
-                        // Add bounce animation
                         saveIcon.classList.add('animate-bounce');
                     } else {
                         this.classList.remove('text-yellow-500', 'bg-yellow-50', 'hover:bg-yellow-100');
@@ -140,8 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         saveIcon.classList.remove('fill-current');
                         saveIcon.classList.add('fill-none');
                     }
-                    
-                    // Show toast message
+                
                     showToast(data.message);
                 }
             } catch (error) {
@@ -156,7 +152,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Toast notification function
     function showToast(message, type = 'success') {
         const toast = document.createElement('div');
         toast.className = `fixed bottom-4 right-4 px-6 py-3 rounded-lg shadow-lg transform transition-all duration-300 translate-y-0 z-50 ${

@@ -3,7 +3,7 @@
 @section('title', 'Create New Exercise')
 
 @section('content')
-<div class="container mx-auto px-4 py-8">
+<div class="container mx-auto px-2 sm:px-4 py-4 sm:py-8">
     <div class="mb-6">
         <a href="{{ route('exercises.index') }}" class="inline-flex items-center text-indigo-600 hover:text-indigo-800">
             <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
