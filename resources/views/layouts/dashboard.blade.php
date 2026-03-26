@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Disc Golf Trainer - Dashboard')</title>
+    <title>@yield('title', 'DiscTats - Dashboard')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-gray-100 min-h-screen overflow-x-hidden">
     <nav class="bg-white shadow relative w-full">
-        <div class="max-w-7xl mx-auto px-2 sm:px-4">
+        <div class="max-w-4xl mx-auto px-2 sm:px-4">
             <div class="flex justify-between h-16">
                 <div class="flex">
                     <div class="flex-shrink-0 flex items-center">
                         <a href="/dashboard" class="text-lg sm:text-xl font-bold text-indigo-600">
-                            DG Trainer
+                            DisctTats
                         </a>
                     </div>
                     <div class="hidden sm:ml-6 sm:flex sm:space-x-6">
@@ -100,7 +100,7 @@
         </div>
     </nav>
 
-    <main class="w-full mx-auto py-4 sm:py-6 px-2 sm:px-4 overflow-x-hidden">
+    <main class="w-full mx-auto py-3 sm:py-4 px-2 sm:px-4 overflow-x-hidden">
         @if(session('success'))
             <div class="mb-4 bg-green-100 border border-green-400 text-green-700 px-3 sm:px-4 py-3 rounded text-sm sm:text-base">
                 {{ session('success') }}

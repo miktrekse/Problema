@@ -3,10 +3,10 @@
 @section('title', 'Competitions')
 
 @section('content')
-<div class="container mx-auto px-2 sm:px-4 py-4 sm:py-8">
+<div class="container mx-auto px-2 sm:px-4 py-3 sm:py-5">
     <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 sm:mb-6 gap-3">
         <div>
-            <h1 class="text-2xl sm:text-3xl font-bold text-gray-800">Disc Golf Competitions</h1>
+            <h1 class="text-2xl sm:text-3xl font-bold text-gray-800">DiscTats Competitions</h1>
             <p class="text-gray-600 mt-1 text-sm sm:text-base">Find and register for tournaments</p>
         </div>
         <a href="{{ route('competitions.create') }}" class="inline-flex items-center px-3 py-2 sm:px-4 sm:py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition text-sm sm:text-base w-full sm:w-auto justify-center">
@@ -17,7 +17,7 @@
         </a>
     </div>
 
-    <div class="bg-white rounded-lg shadow-sm p-4 mb-6">
+    <div class="bg-white rounded-lg shadow-sm p-3 sm:p-4 mb-4 sm:mb-6">
         <form method="GET" class="flex flex-wrap gap-4 items-center">
             <div class="flex-1 min-w-[200px]">
                 <label class="block text-sm font-medium text-gray-700 mb-1">Status</label>
